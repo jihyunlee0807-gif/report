@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>포스코퓨처엠 생산 현황 보고서</title>
+    <style>
+        /* 전체 폰트 및 여백 설정 */
+        body { font-family: 'Malgun Gothic', sans-serif; padding: 30px; background-color: #f4f7f6; }
+        
+        /* 보고서 컨테이너 (흰색 배경 박스) */
+        .report-container { background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 800px; margin: auto; }
+        
+        h2 { color: #005b9f; border-bottom: 2px solid #005b9f; padding-bottom: 10px; }
+        
+        /* 표 디자인 설정 */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 15px; }
+        th, td { border: 1px solid #dddddd; padding: 12px 15px; text-align: center; }
+        
+        /* 표 제목줄 (파란색 배경, 흰색 글씨) */
+        th { background-color: #005b9f; color: white; font-weight: bold; }
+        
+        /* 짝수 줄 배경색 다르게 (지브라 패턴) */
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        
+        /* 마우스 올렸을 때 하이라이트 효과 */
+        tr:hover { background-color: #e8f4f8; transition: background-color 0.3s ease; cursor: pointer; }
+        
+        /* 증감 색상 포인트 */
+        .increase { color: #d32f2f; font-weight: bold; } /* 빨간색 */
+        .decrease { color: #1976d2; font-weight: bold; } /* 파란색 */
+    </style>
+</head>
+<body>
+
+<div class="report-container">
+    <h2>📊 이차전지소재 주요 제품 생산 현황 (가상 데이터)</h2>
+    <p>2023년 1분기 및 2분기 주요 제품의 생산량 증감 추이입니다.</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>제품명</th>
+                <th>구분</th>
+                <th>1분기 (톤)</th>
+                <th>2분기 (톤)</th>
+                <th>전분기 대비</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>NCMA 양극재</td>
+                <td>양극소재</td>
+                <td>15,000</td>
+                <td>18,500</td>
+                <td class="increase">▲ 23.3%</td>
+            </tr>
+            <tr>
+                <td>천연흑연 음극재</td>
+                <td>음극소재</td>
+                <td>8,000</td>
+                <td>8,200</td>
+                <td class="increase">▲ 2.5%</td>
+            </tr>
+            <tr>
+                <td>인조흑연 음극재</td>
+                <td>음극소재</td>
+                <td>3,000</td>
+                <td>2,800</td>
+                <td class="decrease">▼ 6.7%</td>
+            </tr>
+            <tr>
+                <td>전구체</td>
+                <td>기초소재</td>
+                <td>5,500</td>
+                <td>5,500</td>
+                <td style="color: gray;">- 0.0%</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
