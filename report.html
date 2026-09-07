@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[리더의 공명] 주간회의 심층 회의록</title>
+    <style>
+        /* 기본 설정 */
+        body { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: #fff; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden; }
+        
+        /* 헤더 영역 */
+        .header { background: linear-gradient(135deg, #005b9f, #003f72); color: white; padding: 30px 40px; text-align: center; }
+        .header h1 { margin: 0 0 10px 0; font-size: 28px; letter-spacing: -1px; }
+        .header p { margin: 5px 0; font-size: 15px; opacity: 0.9; }
+        .header .notice { font-size: 13px; color: #ffd700; margin-top: 15px; font-weight: bold; }
+
+        /* 탭 메뉴 */
+        .tabs { display: flex; background-color: #e9ecef; border-bottom: 2px solid #005b9f; }
+        .tab-btn { flex: 1; background: none; border: none; padding: 15px; font-size: 16px; font-weight: bold; color: #555; cursor: pointer; transition: 0.3s; }
+        .tab-btn:hover { background-color: #dbe4eb; }
+        .tab-btn.active { background-color: #005b9f; color: white; }
+
+        /* 탭 콘텐츠 */
+        .tab-content { display: none; padding: 30px 40px; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 아코디언 (접기/펼치기) */
+        .accordion { background-color: #f8f9fa; color: #222; cursor: pointer; padding: 18px; width: 100%; border: 1px solid #e1e4e8; border-radius: 8px; text-align: left; outline: none; font-size: 16px; font-weight: bold; transition: 0.3s; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .accordion:hover, .accordion.active { background-color: #e8f0f6; border-color: #005b9f; color: #005b9f; }
+        .accordion::after { content: '\002B'; font-size: 20px; color: #777; font-weight: bold; }
+        .accordion.active::after { content: "\2212"; color: #005b9f; }
+        
+        .panel { padding: 0 20px; background-color: white; display: none; overflow: hidden; border-left: 3px solid #005b9f; margin-bottom: 20px; border-radius: 0 0 8px 8px; }
+        
+        /* 세부 내용 스타일 */
+        .item-title { font-size: 16px; color: #333; margin-top: 20px; border-bottom: 1px dashed #ccc; padding-bottom: 5px; }
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-right: 8px; margin-bottom: 5px; color: white; }
+        .badge.feedback { background-color: #6c757d; }
+        .badge.execute { background-color: #d32f2f; }
+        .content-box { margin-bottom: 15px; font-size: 14.5px; text-align: justify; }
+        
+        /* 종합 코멘트 박스 */
+        .summary-box { background-color: #f0f7ff; border: 1px solid #b3d4fc; padding: 15px; border-radius: 8px; margin-top: 20px; margin-bottom: 20px; font-weight: bold; color: #004085; }
+
+        /* Part 2 & 3 카드 스타일 */
+        .card { background: #fff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); border-left: 4px solid #005b9f; }
+        .card h3 { margin-top: 0; color: #005b9f; font-size: 18px; }
+        
+        .highlight-box { background: #212529; color: #fff; padding: 25px; border-radius: 8px; text-align: center; margin-top: 20px; }
+        .highlight-box h2 { color: #ffd700; margin-top: 0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 헤더 -->
+    <div class="header">
+        <h1>[리더의 공명] 주간회의 심층 회의록</h1>
+        <p>9월 1주차 전략보고 | 일시: ’26.9.1 | 장소: 본부장님 집무실</p>
+        <p class="notice">※ 본 회의록은 AI에게 본부의 ‘전략 수석비서’이자 ‘철학적 기록가’로서의 역할을 부여하고 작성된 결과입니다.</p>
+    </div>
+
+    <!-- 탭 버튼 -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'part1')">Part 1. 상세안건 및 피드백</button>
+        <button class="tab-btn" onclick="openTab(event, 'part2')">Part 2. 5대 관점 전략</button>
+        <button class="tab-btn" onclick="openTab(event, 'part3')">Part 3. 메타 메시지</button>
+    </div>
+
+    <!-- Part 1. 상세안건 및 조직별 피드백 -->
+    <div id="part1" class="tab-content active">
+        <h2 style="color: #005b9f; margin-top: 0;">Part 1. 상세안건 및 조직별 피드백</h2>
+        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">※ 아래 각 항목을 클릭하여 상세 피드백과 실행 지침을 확인하세요.</p>
+
+        <button class="accordion">1. Safety Contact</button>
+        <div class="panel">
+            <h4 class="item-title">1-1. 임의 작업 근절 및 안전 심리</h4>
+            <div class="content-box">
+                <span class="badge feedback">피드백</span> 영상에서 보듯 합리적인 의사결정을 내릴 충분한 시간이 주어져도, 위기의 순간 인간은 즉각적이고 감각적으로 작동하는 뇌인 '시스템 1'에 의해 90% 이상 지배당한다. 주목하는 것은 거창한 현장 매뉴얼이 아니다. 급박한 순간에 즉흥적으로 나오는 행동을 정상적으로 통제하기 위해서는 평소의 '마이크로 디시플린(Micro Discipline)', 즉 아주 작은 행동 양식의 훈련이 필수적이다. 평소에 정리 정돈을 잘하는 것, 일어날 때 의자를 집어넣는 것, 계단에서 우측통행을 하는 것, 보행 중 휴대폰을 보지 않는 것. 현장뿐만 아니라 집에서 슬리퍼를 점검하는 것과 같은 이 사소하고 일상적인 규율의 체질화만이 생사를 가르는 결정적 순간에 우리의 안전을 담보하는 유일한 구원이다.
+            </div>
+            <div class="content-box">
+                <span class="badge execute">실행</span> 현장의 작업 수칙을 강제하는 것을 넘어, 구성원들의 일상생활 속 아주 작은 행동 양식(Micro Discipline)까지 통제하고 훈련하는 문화를 조직 전체에 뿌리내리게 하라.
+            </div>
+        </div>
+
+        <button class="accordion">2. 포항/광양 안전환경그룹</button>
+        <div class="panel">
+            <h4 class="item-title">2-1. 내화물사업장 안전작업허가 수준향상을 위한 이행상태 점검 및 1:1 맞춤형 교육실시</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 18명의 관리감독자를 일일이 교육하여 개인의 역량과 수준을 높이겠다는 접근은 요즘 같은 시대에 명백한 한계가 있다. 사람의 기억과 태도에 의존하는 안전은 필연적으로 오차를 낳는다. 진정으로 집중해야 할 것은, 누가 작업을 하더라도 똑같은 작업 결과가 나올 수 있게끔 하는 완벽한 제도를 구축하는 일이다. 기획의 처음 단계부터 AI를 절대적으로 도입해야 한다. 18명이 매달려야 할 일을 단 1.8명이 해도 거뜬히 소화할 수 있을 정도로 AI를 전면적으로 활용하여 압도적인 효율과 무결점의 시스템을 완성하라.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 개인 역량 강화 중심의 교육 프레임에서 과감히 탈피하라. 기획의 첫 단계부터 AI를 전면 도입하여, 기존 18명이 투입되던 업무를 단 1.8명 수준의 인력만으로도 완벽히 통제하고 동일한 결과가 도출될 수 있도록 압도적인 효율을 갖춘 무결점의 시스템을 즉각 설계하라.</div>
+            
+            <h4 class="item-title">2-2. AI 활용 위험점 발굴 실적 분석</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 매일, 매주, 매월 PDCA를 돌리며 현장의 부족한 부분을 찾아내고 강화하려는 헌신과 노력은 틀림없이 존재할 것이다. 그러나 그 노력이 단순히 데이터를 쌓고 보고서를 생성하는 것에 그쳐서는 안 된다. 핵심은 가시화다. 개선의 궤적이 눈에 확연히 보이도록 나타나야 한다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 위험점 발굴 실적이 단순 통계나 텍스트로 남지 않도록 하라. 과거의 결함이 현재 어떻게 진화하고 있는지 현장 작업자들의 눈에 직관적으로 꽂힐 수 있도록 가시화 수준을 극한으로 끌어올려라.</div>
+
+            <h4 class="item-title">2-3. 광양 라임 석회슬러지 사외 반출 집중 관리</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 사고가 발생한 후 CCTV를 뒤져 어느 놈이 저질렀는지 추적하고 밝혀내는 것은 엄청 쉬운 일이며 사후약방문에 불과하다. 애초에 그런 유출 자체가 없어야 한다. 슬러지의 성분과 수분을 포함한 상태에 따라 출렁거리거나 넘칠 가능성까지 치밀하게 감안하여 운송 표준을 고도화해야 한다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 슬러지의 수분 함량에 따른 물리적 출렁임까지 계산하여 운송 표준의 깊이를 더하라. 사후 색출이 아닌, 환경 리스크 제로화를 위한 선제적이고 완벽한 통제망을 재구축하라.</div>
+
+            <div class="summary-box">💡 [안전환경 종합] 개인의 역량과 교육에 의존하는 낡은 안전 관리에서 벗어나, AI와 시스템이 주도하는 무결점의 안전 인프라로 진화하라. 사후 대처가 아닌 사전 원천 차단만이 안전환경 조직의 유일한 존재 이유다.</div>
+        </div>
+
+        <button class="accordion">3. 포항라임화성정비부</button>
+        <div class="panel">
+            <h4 class="item-title">3-1. 1원료 A108 Drum Washer의 실시간 상태 모니터링 시스템(CMS) 자력 구축</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 중요한 것은 성공 사례를 먼저 만들어 현장의 자발적인 개선 의지를 촉발시킨 그 접근법이다. 관리자가 일방적으로 지시하는 것이 아니라, 직원들 스스로 개선의 필요성을 느끼고 실행으로 옮길 수 있도록 판을 깔아준 조직 문화와 태도가 매우 유효하게 작동했다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 현장의 자발적 분위기가 형성된 지금의 동력을 잃지 마라. 리더 그룹은 현장과 함께 치열하게 고민하여 설비 고도화의 우선순위를 명확히 타겟팅하고, 직원들의 개선 의지가 실제 시스템 구축으로 막힘없이 이어질 수 있도록 전폭적으로 지원하라.</div>
+
+            <h4 class="item-title">3-2. 3화성 R.O Heater 저압증기 회수 시스템 구축을 통한 Steam 절감</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 생각에 머물지 않고 이를 실제 비즈니스 성과와 직결되는 유의미한 결과치로 치환해 낸 실행력이 압도적으로 훌륭하다. 입사 6년 차 사원의 아이디어가 사장되지 않도록 파트장과 부장이 힘을 실어주고 구체적인 방법을 제시하며 밀어준 과정이야말로, 단순한 기술적 정비를 넘어 공장 가동의 본질을 꿰뚫는 완벽한 비즈니스적 태도다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 기술적 실력에만 매몰되지 마라. 현장의 모든 정비 활동과 아이디어가 궁극적으로 회사의 수익성과 비즈니스 가치로 연결될 수 있도록, 조직 전체가 아이디어를 발굴하고 사업화하는 연계 프로세스를 더욱 강력하게 체질화하라.</div>
+        </div>
+
+        <button class="accordion">4. 광양라임화성정비부 & 5. 내화물정비섹션</button>
+        <div class="panel">
+            <h4 class="item-title">4-1. 3석회 Drum Washer 출구 Chute 등 재질 개선 및 1,2 화성 유황 Drain Pump 예비품 확보</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 인간이 미처 쌓지 못한 방대한 경험치를 AI를 통해 선제적으로 확보하고, 이를 바탕으로 실패 확률을 제로에 가깝게 통제해 낸 접근 방식이 매우 탁월하다. 나아가, 마모가 극심한 라임 공장의 특성을 고려할 때, CDQ 버켓에 사용되는 고열·고내마모성 재질의 폐기분을 우리 쪽 라인에 재활용하는 방안도 훌륭한 대안이 될 수 있다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 인간의 경험적 한계를 AI의 데이터로 돌파하는 현재의 방식을 모든 정비 의사결정 과정에 표준으로 삼아라. 아울러, CDQ 버켓 등 타 공정에서 폐기되는 고스펙 재질을 라임 공장의 마모 취약 개소에 교차 적용하여 원가를 절감하고 수명을 극대화할 수 있는 방안을 즉각 검토하고 실험하라.</div>
+
+            <h4 class="item-title">5-1. 수마그 40T Thickener 회수Line 노후배관 강건화 실시</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 40년이 지난 노후 설비와 배관을 고장이 발생하기 직전에야 땜질식으로 교체하거나, 가동 중에 쫓기듯 일시에 처리하려는 방식은 리스크가 너무 크다. 눈앞에 닥친 문제만 해결할 것이 아니라, 공장 전체의 노후 구조물과 배관에 대해 장기적인 시야를 가져야 한다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 단기적 처방에서 벗어나라. 공장 전체의 노후 설비에 대한 장기 교체 마스터플랜을 즉각 수립하라. 매년 연초 투자 계획 수립 시 필요 예산을 체계적으로 반영하고, 결재 라인과 긴밀히 조율하여 점진적이고 안정적으로 강건화 작업을 완수할 수 있는 시스템을 구축하라.</div>
+
+            <div class="summary-box">💡 [정비 종합] 정비는 더 이상 고장 난 설비를 고치는 수동적 기능이 아니다. 단순한 기술적 수리에 머물지 마라. 현장의 작은 아이디어를 회사의 수익으로 직결시키고, 인간의 경험적 한계를 AI의 데이터로 극복하며, 눈앞의 땜질식 처방을 넘어 거시적 안목의 마스터플랜을 실행하라. 이것이 정비 조직에 요구하는 '비즈니스 파트너'로서의 역할이다.</div>
+        </div>
+
+        <button class="accordion">6. 내화물솔루션그룹</button>
+        <div class="panel">
+            <h4 class="item-title">6-1. 포스코 요청사항 대응현황 (신설전기로 긴급보수 및 중국 공급사 출장 동행)</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 신설전기로 긴급 보수 건은 선제적으로 대응한 매우 훌륭한 조치다. 중국 공급사 실사 동행 요청은 과도하게 예민하게 반응할 사안이 아니다. 이를 위기나 부담으로 받아들이지 말고, 오히려 우리의 책임감과 역량을 보여줄 수 있는 기회의 일부로 편안하게 인식해야 한다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 고객사의 긴급 요청에는 전폭적이고 적극적인 지원을 유지하여 굳건한 신뢰를 증명하라. 고객사의 압박성 동행 요청에 민감하게 흔들리지 말고, 이를 우리의 입지를 더욱 공고히 하는 전략적 기회로 역활용하라.</div>
+
+            <h4 class="item-title">6-2. 전로 내화물 프로그램포장 자재 물류 흐름 크로스체크 시스템 개발</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 인력이 부족하고 환경이 열악하다는 '결핍'이 오히려 스스로 돌파구를 찾게 만드는 강력한 동인으로 작용했다. 조직 전체가 AI를 적극적으로 수용하고 활용하려는 태도가 완벽히 자리 잡았다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 결핍을 혁신으로 바꾼 실무자의 노고를 강력히 인정하라. 적극적으로 일하는 직원을 전폭적으로 밀어주고, 아낌없는 칭찬과 격려를 통해 조직 전체의 사기와 AI 활용 의지를 극한으로 끌어올려라.</div>
+
+            <h4 class="item-title">6-3. 양소 전로 노수리후 Top ch. 점검 결과</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 경쟁사 제품의 결함과 틈새를 집요하게 파고들어 우리의 협상 카드로 쥐는 전략적 움직임이 매우 탁월하다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 경쟁사의 취약점을 발굴해 낸 현장의 노고를 부각하고, 확보된 데이터를 바탕으로 고객사와의 협상에서 우리의 가치를 극대화하는 지렛대로 적극 활용하라.</div>
+
+            <h4 class="item-title">6-4. 광)3제강 1RH 나노촉매 적용 상승관 연와 탈락으로 인한 조기교환</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 나노 촉매(CNT)는 우리가 사활을 걸고 밀고 있는 핵심 에이스 품목이다. 일론 머스크조차 실수를 하지만, 우리의 에이스 품목에서는 결코 실수가 용납되어서는 안 된다. 기존 내화물과 동일한 잣대로 품질을 관리하여 발생한 맹점이다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 에이스 품목에 걸맞은 차별화된 품질 관리 기준을 즉각 수립하라. 원인을 명확히 규명하고, 새로운 기준을 적용하여 향후 동일한 결함이 원천 차단됨을 고객사에게 완벽히 증명하라.</div>
+
+            <div class="summary-box">💡 [내화물솔루션그룹 종합] 결핍을 혁신으로 승화시킨 자체 시스템 개발부터 경쟁사의 빈틈을 파고드는 집요함까지, 비즈니스를 주도하는 야성이 돋보인다. 에이스 품목의 품질 기준을 재정립하여 시장에서의 압도적 우위를 확고히 다져라.</div>
+        </div>
+
+        <button class="accordion">7. 노재정비사업실</button>
+        <div class="panel">
+            <h4 class="item-title">7-1. 광·포 취약시간 및 단독작업 개소 안전관리 강화 추진</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 순회 점검, CCTV 감시 등 통제와 감시 중심의 '관리 언어'가 난무하고 있다. 왜 그 시간이 취약한지에 대한 디테일한 분석 없이, 인력을 갈아 넣고 감시망만 촘촘히 하는 아날로그적 통제는 명백한 한계에 직면한다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 감시와 통제 중심의 낡은 관리 프레임을 즉각 폐기하라. 취약 시간의 근본 원인을 AI를 활용해 딥다이브하여 분석하고, 작업자 스스로 안전을 지킬 수밖에 없는 지속 가능한 시스템을 설계하라.</div>
+
+            <h4 class="item-title">7-2. 현장 실무 맞춤형 AI 앱 개발 및 챌린지 공모 추진</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 지시와 매뉴얼로 억지로 끌고 가는 것이 아니라, 일상 업무 속에서 작은 승리의 경험(Small Wins)을 지속적으로 맛보게 하여 승자 효과(Winner Effect)를 얻게 하는 것이 핵심이다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 주입식 교육 매뉴얼에 의존하려는 관성을 과감히 탈피하라. 실무자들이 현장에서 AI를 활용해 작지만 의미 있는 성공을 거두는 '승자의 경험'을 반복적으로 누릴 수 있도록 판을 깔아주고, 이를 통해 스스로 AI를 내재화하는 자발적 조직 문화를 구축하라.</div>
+
+            <h4 class="item-title">7-3. 고위험 수작업 무인화·기계화 과제 추진 현황</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 방향성과 실행력 모두 훌륭하다. 그러나 이 훌륭한 과제들이 단발성으로 끝나지 않고 전사적으로 확대되기 위해서는 초기 기획 단계부터 고객사(포스코)의 관련 부서를 끌어들여야 한다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 독자 노선을 고집하지 마라. 과제 시작 단계부터 고객사를 적극적으로 관여시키고 성과를 공유하여, 전폭적인 투자와 지원을 이끌어내는 전략적 파트너십을 즉각 가동하라.</div>
+
+            <div class="summary-box">💡 [노재정비사업실 종합] 과거의 성공 방정식과 통제 중심의 낡은 관리 프레임에서 철저히 벗어나야 한다. 작업자의 자발적 동인을 이끌어내는 시스템을 구축하고, 고객사를 우군으로 끌어들이는 전략적 영리함을 장착하라.</div>
+        </div>
+
+        <button class="accordion">8. 라임화성사업실</button>
+        <div class="panel">
+            <h4 class="item-title">8-1. 안전시설물 분석용 AI 에이전트를 활용한 위험요인 개선</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> AI를 활용하면 감정 소모 없이 완벽한 자기 객관화가 가능해지며, AI가 메타적으로 우리의 맹점을 짚어주는 것을 수용할 수 있게 된다. 이것이 바로 AI 활용이 가지는 진정한 가치다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> AI를 '메타적 거울'로 삼아 맹점을 기꺼이 수용하는 현재의 훌륭한 태도를 조직의 확고한 DNA로 굳혀라. 이미 증명된 이 성공적인 방식을 현장의 모든 영역으로 확장하라.</div>
+
+            <h4 class="item-title">8-2. 광양 화성공장 2~4기 유황 저장탱크 투자 교체 및 전용 소방설비 설치</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 소방법 강화에 따른 규제를 드렌처(살수 장치) 설치라는 대안으로 돌파해 낸 것은 현장의 제약을 영리하게 풀어낸 훌륭한 접근이다. 유황은 화재 시 치명적인 SO2 가스를 발생시키는 극도로 위험한 물질이다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 유황 화재가 지닌 보이지 않는 치명적 위험성을 현장 작업자들에게 다시 한번 명확히 각인시켜라. 전 사업장의 유황 취급 시설에 대해 선제적이고 건전한 방재 설계가 완벽히 유지되도록 점검하라.</div>
+
+            <h4 class="item-title">8-3. 포항 라임공장 1원료 Drum Washer 신예화 추진</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 3고로 노벽 보수 일정과 동기화하여 생석회 수급 이슈 없이 설비 교체 기회를 적기에 포착한 점은 매우 영리한 조업 관리다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 앞으로도 대형 설비 투자 및 정비 시, 이번 사례처럼 연관 공정의 휴지 일정을 면밀히 연계하여 생산 차질을 방지하는 영리하고 치밀한 조업 관리를 지속하라.</div>
+
+            <div class="summary-box">💡 [라임화성사업실 종합] AI를 통한 자기 객관화의 수용, 치명적 위험에 대한 선제적 방재 대안 마련, 그리고 공정 일정을 꿰뚫어 보는 영리한 정비 타이밍 포착까지. 현장의 문제를 비즈니스적 시각과 유연한 사고로 돌파해 내고 있다. 이 감각을 유지하라.</div>
+        </div>
+
+        <button class="accordion">9. 내화물사업실</button>
+        <div class="panel">
+            <h4 class="item-title">9-1. [AI안전] 청림사업장 안전시설물 일괄 점검 및 개선 추진</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 사내 지침을 AI 에이전트에 등록해 현장의 기준을 명확히 세운 시도는 매우 훌륭하다. 그러나 여기서 멈춰서는 안 된다. 인간의 눈으로 놓치는 사각지대는 비전 AI 등 기존에 써보지 않은 새로운 기술을 선제적으로 동원해서라도 숨은 위험을 몽땅 발굴해 내야 한다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 비전 AI 등 도입 가능한 모든 기술적 수단을 동원하여 현장의 위험 요인을 이 잡듯이 뒤져라. 고질적인 안전 문제를 완벽히 발본색원하고, 철저한 모니터링 체계를 굳혀라.</div>
+
+            <h4 class="item-title">9-2. 광양 RH 하강관 내경 치수 부적합 원인 및 향후 계획</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 현장에서 즉각적으로 개선될 수 있는 문제가 복잡한 소통 구조 속에서 겉돌며 위로 올라오는 것은, 우리의 문제 해결 및 최적화 절차가 비효율적이라는 명백한 방증이다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 부서 및 협력사 간 얽혀 있는 복잡한 피드백 구조를 단순화하고 직선화하라. 현장 중심의 빠르고 효율적인 문제 해결 절차를 재구축하라.</div>
+
+            <h4 class="item-title">9-3. 전로 연와 축조 취급 시 와이어 접촉부 파손에 따른 포장 개선</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 현장에서 파손 VOC가 접수된 후에야 포장 방식을 개선한 것은 명백히 '한 템포 느린' 대응이다. 기획하고 설계하는 단계에서 리스크를 사전에 시뮬레이션하고 검증했어야 마땅하다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 사후약방문식 대응을 근절하라. 새로운 공법이나 포장 방식을 도입할 때는 기획 단계에서부터 발생 가능한 모든 리스크를 입체적으로 검증하는 사전 필터링 프로세스를 의무화하라.</div>
+
+            <div class="summary-box">💡 [내화물사업실 종합] 문제 해결의 패러다임을 '사후 조치'에서 '선제적 통제'로 완벽히 전환해야 할 때다. 기획 단계부터 리스크를 치밀하게 시뮬레이션하고, 현장에서 발생한 이슈는 실무진 주도하에 즉각적으로 종결짓는 유연함과 속도감을 갖춰라.</div>
+        </div>
+
+        <button class="accordion">10. 글로벌노재사업실 & 11. 기초소재연구그룹</button>
+        <div class="panel">
+            <h4 class="item-title">10-1. D-안전활동 PDCA 체크리스트 도출 및 공사현장 이행 점검</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 리더 그룹이 AI에 대한 높은 이해도를 바탕으로 현장의 안전 관리 시스템을 주도적으로 설계하고 적용한 점이 매우 인상적이다. AI를 비서처럼 부리며 현장의 특성에 맞게 최적화해 내는 수준에 이르렀다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 리더부터 실무자까지 AI에 대한 이해도와 실질적인 활용 역량을 지속적으로 끌어올려, 모든 현장 관리와 의사결정 과정에 AI가 자연스럽게 녹아드는 업무 혁신을 가속화하라.</div>
+
+            <h4 class="item-title">10-2. 현대제철向 MHP 국산화 TEST 추진</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 이번 건에서 잊지 말아야 할 핵심은 '원가보다 비싸게 파는 것'이다. 제품을 제대로 잘 만들어서 확실하게 이익을 남겨라.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 테스트용 제품을 완벽하게 제조하여 품질을 입증하라. 철저한 원가 분석을 통해 투입 비용 이상의 확실한 마진을 남길 수 있도록 단가를 꼼꼼하게 챙겨라.</div>
+
+            <h4 class="item-title">11-1. 방열소재 공침법 입자 구형화 기술특성 파악</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 완벽한 원형을 유지하는 기술적 완성도가 중요하다. 향후 인력 조정 등을 통해 연구원 1명당 기술원 1~2명이 매칭되는 '특수부대' 같은 체제가 갖춰진다면, 그 연구 성과가 비즈니스로 직결될 수 있도록 적극 도움을 주고 싶다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 타 부서와의 협업을 통해 공침법을 활용한 입자 구형화 연구를 차질 없이 진행하라. 연구 성과가 단순 개발에 그치지 않고 실제 사업화와 수익 창출로 이어질 수 있도록 비즈니스 관점에서 접근하라.</div>
+        </div>
+
+        <button class="accordion">12. 기타(공통)</button>
+        <div class="panel">
+            <h4 class="item-title">12-1. 코크스 노체 협력사의 근로자 지위확인 소송 진행 현황</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> 당장 현장에 남아 조업을 수행하는 직원들이 동요하지 않고 본업에 집중할 수 있도록 안심시키는 조치가 필요하다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 포스코의 향후 전환 일정을 정확히 파악하라. 대기 중인 협력사 직원들이 걱정 없이 일에 집중할 수 있도록 적절한 방식을 통해 메시지를 전달하라.</div>
+
+            <h4 class="item-title">12-2. MRO 자재 및 창고감축 / DX가속화 TF 운영 계획</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> MRO 자재 및 창고 감축 건은 최고경영자(사장님)께서 직접 피드백을 주신 사안인 만큼 꼼꼼하게 챙겨야 한다. DX 가속화는 기획서상의 화려한 계획이나 구호로 끝나서는 안 된다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> MRO 자재 감축은 차질 없이 꼼꼼하게 후속 조치를 챙겨라. DX 가속화는 당장 현업에서 AI의 도움을 받아 즉각적인 성과를 낼 수 있는 과제부터 샅샅이 발굴하라. 전 직원의 AI 리터러시를 끌어올려 일하는 방식 자체를 혁신하라.</div>
+
+            <h4 class="item-title">12-3. 현장 데이터의 전면적인 디지털화(Digital Footprint)</h4>
+            <div class="content-box"><span class="badge feedback">피드백</span> AI를 현업에 제대로 활용하기 위한 첫 단추는 현장의 모든 기록을 '디지털 발자국(Digital Footprint)'으로 남기는 것이다. 창고에 쌓여있는 수많은 종이 서류를 전산화하지 않으면 AI 분석은 불가능하다.</div>
+            <div class="content-box"><span class="badge execute">실행</span> 각 조직은 현장의 모든 수기 문서와 서류를 전산화하는 작업에 착수하라. 종이 무덤에서 벗어나, 데이터를 기반으로 조업을 통제하고 예측하는 완벽한 디지털 전환의 토대를 즉각 구축하라.</div>
+
+            <div class="summary-box">💡 [기타 종합] 노무적 과도기 속에서 현장의 동요를 지혜롭게 다독여 조업의 기반을 굳건히 다지는 한편, 최고경영자의 지시사항은 한 치의 오차 없이 실행으로 입증해야 한다. 현장의 낡은 종이 서류들을 전산화하는 '디지털 발자국' 확보라는 가장 기초적인 작업부터 시작하여, 데이터가 조업을 통제하고 예측하는 새로운 패러다임으로 즉각 전환하라.</div>
+        </div>
+    </div>
+
+    <!-- Part 2. 5대 관점별 전략적 재해석 -->
+    <div id="part2" class="tab-content">
+        <h2 style="color: #005b9f; margin-top: 0;">Part 2. 5대 관점별 전략적 재해석</h2>
+        <p style="color: #555; font-weight: bold; margin-bottom: 20px;">이번 주 회의를 관통하는 철학은 '개인의 역량에 의존하는 아날로그적 관성을 철저히 파괴하고, AI와 데이터를 무기로 비즈니스의 본질적 가치를 창출하는 무결점의 시스템으로 진화하는 것'이다.</p>
+
+        <div class="card">
+            <h3>1. 안전 환경</h3>
+            <p><strong>타협할 수 없는 원칙에 대한 주관자의 태도와 엄중함.</strong> 생사를 가르는 위기의 순간, 인간을 구원하는 것은 거창한 매뉴얼이 아니라 일상에 뿌리내린 '마이크로 디시플린(Micro Discipline)'이다. 기획의 첫 단계부터 AI를 전면 도입하여 18명의 몫을 1.8명이 완벽히 통제하는 무결점의 인프라를 구축하라. 사후 색출이나 땜질식 처방이 아닌, 환경 리스크 제로화를 위한 선제적이고 완벽한 통제망만이 안전의 유일한 해답이다.</p>
+        </div>
+        <div class="card">
+            <h3>2. 설비 성과</h3>
+            <p><strong>기술적 완성도와 효율적 운영에 대한 집요한 추구.</strong> 정비는 고장 난 설비를 고치는 수동적 기능이 아니다. 현장의 작은 아이디어를 회사의 수익과 직결시키는 비즈니스적 태도가 필수적이다. 인간의 경험적 한계를 AI의 데이터로 돌파하고, 눈앞의 단기적 처방을 넘어 공장 전체의 노후 설비에 대한 거시적 마스터플랜을 실행하라.</p>
+        </div>
+        <div class="card">
+            <h3>3. 조직 운영</h3>
+            <p><strong>의사결정 체계, 보고 절차, 부서 간 협업에 대한 기준.</strong> 복잡하게 얽힌 피드백 구조는 비효율의 온상이다. 현장에서 발생한 이슈는 실무진 주도하에 즉각적으로 소통하고 최적화하여 종결짓는 직선적이고 빠른 문제 해결 절차를 확립하라. 새로운 공법 도입 시 기획 단계부터 리스크를 입체적으로 검증하는 사전 필터링을 의무화하라.</p>
+        </div>
+        <div class="card">
+            <h3>4. 구성원의 성장</h3>
+            <p><strong>리더가 실무자에게 기대하는 역량, 태도, 주인의식.</strong> 지시와 통제로 억지로 끌고 가는 시대는 끝났다. 실무자들이 현장에서 AI를 활용해 작지만 의미 있는 성공(Small Wins)을 반복적으로 경험하게 하여, 스스로 움직이는 '승자 효과(Winner Effect)'를 창출하라. 결핍을 혁신의 동력으로 삼아라.</p>
+        </div>
+        <div class="card">
+            <h3>5. 미래 전략</h3>
+            <p><strong>현재의 성과를 넘어 미래를 준비하는 본부장의 관점.</strong> 미래를 향한 첫 단추는 현장의 모든 기록을 전산화하는 '디지털 발자국(Digital Footprint)'의 확보다. 종이 무덤에서 벗어나 데이터가 조업을 통제하는 패러다임으로 즉각 전환하라. 에이스 품목에 대한 차별화된 품질 기준을 세워 시장의 우위를 굳히고, 철저한 원가 분석을 통해 확실한 이익을 남기는 비즈니스의 야성을 발휘하라.</p>
+        </div>
+    </div>
+
+    <!-- Part 3. 이번 주의 메타 메시지 -->
+    <div id="part3" class="tab-content">
+        <h2 style="color: #005b9f; margin-top: 0;">Part 3. 이번 주의 메타 메시지</h2>
+        
+        <div class="card" style="border-left-color: #d32f2f;">
+            <h3 style="color: #d32f2f;">리더의 공명</h3>
+            <p><strong>아날로그적 관성을 파괴하고, 데이터와 AI를 기반으로 스스로 진화하는 무결점의 비즈니스 조직으로 거듭나라.</strong></p>
+            <p>우리는 지금 과거의 관성과 미래의 혁신이 교차하는 변곡점에 서 있다. 개인의 기억에 의존하는 안전, 땜질식 처방에 머무는 정비, 복잡하게 얽힌 보고 체계는 더 이상 우리의 무기가 될 수 없다. 결핍을 핑계 삼지 마라. 일상의 아주 작은 규율(Micro Discipline)부터 현장의 모든 기록을 데이터화하는 디지털 발자국까지, 일하는 방식의 근본적인 판을 뒤집어야 한다. AI를 메타적 거울로 삼아 우리의 맹점을 뼈아프게 직시하고, 현장의 작은 아이디어가 비즈니스의 압도적 성과로 직결되는 승리의 경험을 쟁취하라. 이것이 생존을 넘어 시장을 지배하기 위한 우리의 유일한 선택지다.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h2>🔥 향후 한 주간 집중해야 할 단 하나의 핵심 가치</h2>
+            <p style="font-size: 18px; font-weight: bold; color: #fff;">"과거의 관행을 끊어내고, AI와 데이터를 무기로 현장의 실질적 변화를 이끌어내는 <span style="color: #ffd700;">'압도적 실행력'</span>"</p>
+            <p style="text-align: left; margin-top: 20px; font-size: 15px; line-height: 1.8; color: #ddd;">
+                기획서 상의 화려한 구호나 탁상공론은 철저히 배제하라. 지금 우리 본부에 요구되는 것은 현장에 뿌리내린 아날로그적 관성과 낡은 통제 방식을 가차 없이 부수고, AI와 데이터를 실제 비즈니스의 무기로 탈바꿈시키는 지독한 실행력이다. 종이 서류를 전산화하여 '디지털 발자국'을 확보하는 가장 기초적인 작업부터, AI를 활용해 숨은 위험을 발본색원하고 정비의 한계를 돌파하는 것까지, 모든 지시사항은 즉각적이고 가시적인 행동으로 증명되어야 한다. 머뭇거릴 시간이 없다. 리더의 철학을 현장의 실질적인 성과와 수익으로 치환해 내는 것, 그것이 이번 주 우리가 쟁취해야 할 유일한 결과물이다.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // 탭 전환 스크립트
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.className += " active";
+    }
+
+    // 아코디언 스크립트
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
